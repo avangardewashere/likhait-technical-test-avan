@@ -1,0 +1,20 @@
+# Default: let git auto-detect text and normalize line endings to LF in the repo.
+* text=auto eol=lf
+
+# Force LF for shell scripts, Ruby executables, and anything in bin/ — these
+# run inside Linux containers, so CRLF endings break the shebang at runtime.
+*.sh        text eol=lf
+*.rb        text eol=lf
+bin/*       text eol=lf
+**/bin/*    text eol=lf
+Dockerfile  text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+
+# Binary files — never normalize.
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.pdf       binary
